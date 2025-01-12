@@ -48,8 +48,7 @@ public class Main {
 		
 		
 		// 6- Presento el resultado
-		if (resultado == Double.NaN) // FIXME (BUG, porque eso siempre da false debido a especificación IEEE 754)
-										// Utilizar siempre Double.isNaN
+		if (Double.isNaN(resultado)) // Nunca utilizar la comparacion == con Double.NaN, porque no cumple estándar IEEE 754
 			System.err.println("No he podido obtener un resultado valido");
 		else
 			System.out.println("Enhorabuena!!! Tu resultado es: " + resultado);
